@@ -1,5 +1,5 @@
 {
-  "name": "mongoose-extras",
+  "name": "@ppegu/mongoose-extras",
   "version": "1.0.0",
   "description": "mongoose extra functions and utils",
   "main": "dist/index.js",
