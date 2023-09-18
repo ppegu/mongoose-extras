@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "description": "mongoose extra functions and utils",
   "main": "dist/index.js",
-  "author": "Pran pegu(pranpegu997@gmail.com)",
+  "repository": {
+    "type": "GIT",
+    "url": "https://github.com/ppegu/mongoose-extras"
+  },
+  "author": {
+    "email": "pranpegu997@gmail.com",
+    "name": "pran pegu",
+    "url": "https://github.com/ppegu"
+  },
   "license": "MIT",
   "private": false,
   "devDependencies": {
