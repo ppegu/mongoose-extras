@@ -22,11 +22,11 @@ export interface PaginationResult<T> {
   prevPage: number;
 }
 
-export async function paginate(
-  this: Model<any, any, any, any>,
+export async function paginate<T>(
+  this: Model<T, any, any, any>,
   query: FilterQuery<any>,
   options: any
-): Promise<PaginationResult<any>> {
+): Promise<PaginationResult<T>> {
   const {
     searches,
     populate,

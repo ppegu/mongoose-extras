@@ -1,12 +1,12 @@
-import { FilterQuery, Model } from "mongoose"
+import { FilterQuery, Model } from "mongoose";
 
-async function findOneOrCreate(
-  this: Model<any, any, any, any>,
+async function findOneOrCreate<T>(
+  this: Model<T, any, any, any>,
   filter: FilterQuery<any>
-) {
-  let doc = await this.findOne(filter)
-  if (!doc) doc = await this.create(filter)
-  return doc
+): Promise<T> {
+  let doc = await this.findOne(filter);
+  if (!doc) doc = await this.create(filter);
+  return doc;
 }
 
-export default findOneOrCreate
+export default findOneOrCreate;
