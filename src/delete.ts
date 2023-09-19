@@ -1,4 +1,7 @@
-import { Model, ObjectId } from "mongoose";
+import { ObjectId as MongodbObjectId } from "mongodb";
+import { Model, ObjectId as SchemObjectId, Types } from "mongoose";
+
+type ObjectId = SchemObjectId | Types.ObjectId | MongodbObjectId;
 
 export async function deleteManyById<T>(
   this: Model<T, any, any, any>,
