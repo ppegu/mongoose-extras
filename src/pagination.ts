@@ -1,4 +1,10 @@
-import { FilterQuery, Model } from "mongoose";
+import {
+  FilterQuery,
+  Model,
+  PipelineStage,
+  ProjectionType,
+  QueryOptions,
+} from "mongoose";
 
 export interface IPaginationOption {
   page: number;
@@ -22,10 +28,22 @@ export interface PaginationResult<T> {
   prevPage: number;
 }
 
+type PaginateOptions<T> = {
+  searches?: string[];
+  populate?: string[];
+  projection?: ProjectionType<T>;
+  aggregate?: PipelineStage[];
+  options?: QueryOptions<T>;
+  sort?: any;
+  limit?: string | any;
+  page?: number | any;
+  search?: string | any;
+};
+
 export async function paginate<T>(
   this: Model<T, any, any, any>,
-  query: FilterQuery<any>,
-  options: any
+  query: FilterQuery<T & any>,
+  options: PaginateOptions<T>
 ): Promise<PaginationResult<T>> {
   const {
     searches,
